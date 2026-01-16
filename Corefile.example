@@ -1,0 +1,21 @@
+# Example Corefile for ztdns plugin
+# Copy this to Corefile and customize for your setup
+
+remote.zt. {
+    debug
+    log
+    ztdns {
+        token {$ZT_API_TOKEN}
+        network {$ZT_NETWORK_ID}
+        refresh 60s
+    }
+    errors
+}
+
+# Forward all other queries to upstream DNS
+. {
+    forward . 1.1.1.1
+    log
+    errors
+    cache 30
+}
