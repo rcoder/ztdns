@@ -1,7 +1,8 @@
 # Example Corefile for ztdns plugin
 # Copy this to Corefile and customize for your setup
 
-remote.zt. {
+lab.zt. {
+    bind ztw4lkuuz6
     debug
     log
     ztdns {
@@ -14,6 +15,7 @@ remote.zt. {
 
 # Forward all other queries to upstream DNS
 . {
+    bind enp191s0
     forward . 1.1.1.1
     log
     errors

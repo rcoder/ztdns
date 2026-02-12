@@ -30,4 +30,4 @@ build: setup
 	./coredns -version
 
 run: build
-	./coredns -conf Corefile.example -dns.port=1053
+	./coredns -conf Corefile.example -dns.port=53
